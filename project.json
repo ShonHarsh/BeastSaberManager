@@ -1,5 +1,5 @@
 {
-  "name": "BeastSaberManager",
+  "name": "BeastSaber-Manager",
   "description": "A beast saber song manager",
   "main": "Main.xaml",
   "dependencies": {
