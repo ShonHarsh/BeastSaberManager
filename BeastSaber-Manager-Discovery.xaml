@@ -2,9 +2,10 @@
   <x:Members>
     <x:Property Name="in_WebURL" Type="InArgument(x:String)" />
     <x:Property Name="in_NumberOfSongs" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_ExcelDataTable" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1373,4033</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,2560</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -84,14 +85,14 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="The discovery workflow visits a URL and gathers the song name and download address.&#xA;&#xA;Parameters:&#xA;in_WebURL [String]: The Uniform Resource Locator or web address.&#xA;in_NumberOfSongs [Integer32]: The number of songs to parse.&#xA;&#xA;Excel Document Headers: SongName SongNameURL SongDownloadURL ToDownload&#xA;" DisplayName="BeastSaber-Manager-Discovery" sap:VirtualizedContainerService.HintSize="800,3868" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="The discovery workflow visits a URL and gathers the song name and download address.&#xA;&#xA;Parameters:&#xA;in_WebURL [String]: The Uniform Resource Locator or web address.&#xA;in_NumberOfSongs [Integer32]: The number of songs to parse.&#xA;&#xA;Excel Document Headers: SongName SongNameURL SongDownloadURL ToDownload&#xA;" DisplayName="BeastSaber-Manager-Discovery" sap:VirtualizedContainerService.HintSize="598,2395" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch BeastSaber-Manager-Discovery" sap:VirtualizedContainerService.HintSize="758,3644" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch BeastSaber-Manager-Discovery" sap:VirtualizedContainerService.HintSize="556,2171" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="extractDataTable">
           <Variable.Default>
@@ -105,25 +106,17 @@
         </Variable>
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="720,3417" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="518,1944" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:String" Name="fileBeastSaberManagerLocaiton">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">C:\Cloud\Dropbox\Code\Robotic Process Automation\Projects\Personal\BeastSaber-Manager\BeastSaber-Manager.xlsx</Literal>
-              </Variable.Default>
-            </Variable>
-            <Variable x:TypeArguments="x:String" Name="valueToDownload">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">ToDownload</Literal>
-              </Variable.Default>
-            </Variable>
+            <Variable x:TypeArguments="x:String" Default="C:\Cloud\Dropbox\Code\Robotic Process Automation\Projects\Personal\BeastSaber-Manager\BeastSaber-Manager.xlsx" Name="fileBeastSaberManagerLocaiton" />
+            <Variable x:TypeArguments="x:String" Default="ToDownload" Name="valueToDownload" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="ExtractedDataTable" sap:VirtualizedContainerService.HintSize="678,672" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence DisplayName="ExtractedDataTable" sap:VirtualizedContainerService.HintSize="476,672" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -193,7 +186,7 @@
               </ui:AddDataColumn.DataTable>
             </ui:AddDataColumn>
           </Sequence>
-          <Sequence sap2010:Annotation.AnnotationText="Read the BeastSaber-Manager.xlsx and store the data in ExcelDataTable.  No Excel Application Scopre required for the read." DisplayName="Read To ExcelDataTable" sap:VirtualizedContainerService.HintSize="678,236" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence sap2010:Annotation.AnnotationText="Read the BeastSaber-Manager.xlsx and store the data in ExcelDataTable.  No Excel Application Scopre required for the read." DisplayName="Read To ExcelDataTable" sap:VirtualizedContainerService.HintSize="476,236" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -219,176 +212,201 @@
               </ui:ReadRange.WorkbookPath>
             </ui:ReadRange>
           </Sequence>
-          <Sequence sap2010:Annotation.AnnotationText="The Remove Duplicates activity does not work." DisplayName="Remove Duplicates" sap:VirtualizedContainerService.HintSize="678,1595" sap2010:WorkflowViewState.IdRef="Sequence_26">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="recIdExcel" />
-              <Variable x:TypeArguments="x:String" Name="recIdExtracted" />
-              <Variable x:TypeArguments="x:Object" Name="valueDelete">
-                <Variable.Default>
-                  <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">"DELETE"</mca:CSharpValue>
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:String" Name="valueSongDownloadURL">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">SongDownloadURL</Literal>
-                </Variable.Default>
-              </Variable>
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each ExcelDataTable Get RecId" sap:VirtualizedContainerService.HintSize="636,1241" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
-              <ui:ForEachRow.Body>
-                <ActivityAction x:TypeArguments="sd:DataRow">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowExcel" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body ExcelDataTable Get RecId" sap:VirtualizedContainerService.HintSize="602,1121" sap2010:WorkflowViewState.IdRef="Sequence_30">
+          <ui:CommentOut DisplayName="Comment Out - Duplicates" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="720,1746" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence sap2010:Annotation.AnnotationText="The Remove Duplicates activity does not work." DisplayName="Remove Duplicates" sap:VirtualizedContainerService.HintSize="678,1654" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="recIdExcel" />
+                    <Variable x:TypeArguments="x:String" Name="recIdExtracted" />
+                    <Variable x:TypeArguments="x:Object" Name="valueDelete">
+                      <Variable.Default>
+                        <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">"DELETE"</mca:CSharpValue>
+                      </Variable.Default>
+                    </Variable>
+                    <Variable x:TypeArguments="x:String" Default="SongDownloadURL" Name="valueSongDownloadURL" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:RemoveDuplicateRows DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="636,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1">
+                    <ui:RemoveDuplicateRows.DataTable>
+                      <InArgument x:TypeArguments="sd:DataTable">
+                        <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">excelDataTable</mca:CSharpValue>
+                      </InArgument>
+                    </ui:RemoveDuplicateRows.DataTable>
+                    <ui:RemoveDuplicateRows.OutputDataTable>
+                      <OutArgument x:TypeArguments="sd:DataTable">
+                        <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">excelDataTable</mca:CSharpReference>
+                      </OutArgument>
+                    </ui:RemoveDuplicateRows.OutputDataTable>
+                  </ui:RemoveDuplicateRows>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each ExcelDataTable Get RecId" sap:VirtualizedContainerService.HintSize="636,1238" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowExcel" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body ExcelDataTable Get RecId" sap:VirtualizedContainerService.HintSize="602,1119" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="560,185" sap2010:WorkflowViewState.IdRef="GetRowItem_1">
+                            <ui:GetRowItem.ColumnName>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_109">valueSongDownloadURL</mca:CSharpValue>
+                              </InArgument>
+                            </ui:GetRowItem.ColumnName>
+                            <ui:GetRowItem.Row>
+                              <InArgument x:TypeArguments="sd:DataRow">
+                                <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">CurrentRowExcel</mca:CSharpValue>
+                              </InArgument>
+                            </ui:GetRowItem.Row>
+                            <ui:GetRowItem.Value>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">recIdExcel</mca:CSharpReference>
+                              </OutArgument>
+                            </ui:GetRowItem.Value>
+                          </ui:GetRowItem>
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,802" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                            <ui:ForEachRow.Body>
+                              <ActivityAction x:TypeArguments="sd:DataRow">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowExtracted" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,683" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,185" sap2010:WorkflowViewState.IdRef="GetRowItem_2">
+                                    <ui:GetRowItem.ColumnName>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">valueSongDownloadURL</mca:CSharpValue>
+                                      </InArgument>
+                                    </ui:GetRowItem.ColumnName>
+                                    <ui:GetRowItem.Row>
+                                      <InArgument x:TypeArguments="sd:DataRow">
+                                        <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90">CurrentRowExtracted</mca:CSharpValue>
+                                      </InArgument>
+                                    </ui:GetRowItem.Row>
+                                    <ui:GetRowItem.Value>
+                                      <OutArgument x:TypeArguments="x:String">
+                                        <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">recIdExtracted</mca:CSharpReference>
+                                      </OutArgument>
+                                    </ui:GetRowItem.Value>
+                                  </ui:GetRowItem>
+                                  <If sap:VirtualizedContainerService.HintSize="484,366" sap2010:WorkflowViewState.IdRef="If_1">
+                                    <If.Condition>
+                                      <InArgument x:TypeArguments="x:Boolean">
+                                        <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91">recIdExcel == recIdExtracted</mca:CSharpValue>
+                                      </InArgument>
+                                    </If.Condition>
+                                    <If.Then>
+                                      <ui:UpdateRowItem ColumnIndex="{x:Null}" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="UpdateRowItem_4">
+                                        <ui:UpdateRowItem.ColumnName>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">valueToDownload</mca:CSharpValue>
+                                          </InArgument>
+                                        </ui:UpdateRowItem.ColumnName>
+                                        <ui:UpdateRowItem.Row>
+                                          <InArgument x:TypeArguments="sd:DataRow">
+                                            <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">CurrentRowExtracted</mca:CSharpValue>
+                                          </InArgument>
+                                        </ui:UpdateRowItem.Row>
+                                        <ui:UpdateRowItem.Value>
+                                          <InArgument x:TypeArguments="x:Object">
+                                            <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">valueDelete</mca:CSharpValue>
+                                          </InArgument>
+                                        </ui:UpdateRowItem.Value>
+                                      </ui:UpdateRowItem>
+                                    </If.Then>
+                                  </If>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:ForEachRow.Body>
+                            <ui:ForEachRow.DataTable>
+                              <InArgument x:TypeArguments="sd:DataTable">
+                                <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">extractDataTable</mca:CSharpValue>
+                              </InArgument>
+                            </ui:ForEachRow.DataTable>
+                          </ui:ForEachRow>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                    <ui:ForEachRow.DataTable>
+                      <InArgument x:TypeArguments="sd:DataTable">
+                        <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">excelDataTable</mca:CSharpValue>
+                      </InArgument>
+                    </ui:ForEachRow.DataTable>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="560,185" sap2010:WorkflowViewState.IdRef="GetRowItem_1">
-                      <ui:GetRowItem.ColumnName>
-                        <InArgument x:TypeArguments="x:String">
-                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_109">valueSongDownloadURL</mca:CSharpValue>
-                        </InArgument>
-                      </ui:GetRowItem.ColumnName>
-                      <ui:GetRowItem.Row>
-                        <InArgument x:TypeArguments="sd:DataRow">
-                          <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">CurrentRowExcel</mca:CSharpValue>
-                        </InArgument>
-                      </ui:GetRowItem.Row>
-                      <ui:GetRowItem.Value>
-                        <OutArgument x:TypeArguments="x:String">
-                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">recIdExcel</mca:CSharpReference>
-                        </OutArgument>
-                      </ui:GetRowItem.Value>
-                    </ui:GetRowItem>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,804" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
-                      <ui:ForEachRow.Body>
-                        <ActivityAction x:TypeArguments="sd:DataRow">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowExtracted" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,684" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,185" sap2010:WorkflowViewState.IdRef="GetRowItem_2">
-                              <ui:GetRowItem.ColumnName>
-                                <InArgument x:TypeArguments="x:String">
-                                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">valueSongDownloadURL</mca:CSharpValue>
-                                </InArgument>
-                              </ui:GetRowItem.ColumnName>
-                              <ui:GetRowItem.Row>
-                                <InArgument x:TypeArguments="sd:DataRow">
-                                  <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90">CurrentRowExtracted</mca:CSharpValue>
-                                </InArgument>
-                              </ui:GetRowItem.Row>
-                              <ui:GetRowItem.Value>
-                                <OutArgument x:TypeArguments="x:String">
-                                  <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">recIdExtracted</mca:CSharpReference>
-                                </OutArgument>
-                              </ui:GetRowItem.Value>
-                            </ui:GetRowItem>
-                            <If sap:VirtualizedContainerService.HintSize="484,367" sap2010:WorkflowViewState.IdRef="If_1">
-                              <If.Condition>
-                                <InArgument x:TypeArguments="x:Boolean">
-                                  <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91">recIdExcel == recIdExtracted</mca:CSharpValue>
-                                </InArgument>
-                              </If.Condition>
-                              <If.Then>
-                                <ui:UpdateRowItem ColumnIndex="{x:Null}" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="UpdateRowItem_4">
-                                  <ui:UpdateRowItem.ColumnName>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">valueToDownload</mca:CSharpValue>
-                                    </InArgument>
-                                  </ui:UpdateRowItem.ColumnName>
-                                  <ui:UpdateRowItem.Row>
-                                    <InArgument x:TypeArguments="sd:DataRow">
-                                      <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">CurrentRowExtracted</mca:CSharpValue>
-                                    </InArgument>
-                                  </ui:UpdateRowItem.Row>
-                                  <ui:UpdateRowItem.Value>
-                                    <InArgument x:TypeArguments="x:Object">
-                                      <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">valueDelete</mca:CSharpValue>
-                                    </InArgument>
-                                  </ui:UpdateRowItem.Value>
-                                </ui:UpdateRowItem>
-                              </If.Then>
-                            </If>
-                          </Sequence>
-                        </ActivityAction>
-                      </ui:ForEachRow.Body>
-                      <ui:ForEachRow.DataTable>
-                        <InArgument x:TypeArguments="sd:DataTable">
-                          <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">extractDataTable</mca:CSharpValue>
-                        </InArgument>
-                      </ui:ForEachRow.DataTable>
-                    </ui:ForEachRow>
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEachRow.Body>
-              <ui:ForEachRow.DataTable>
-                <InArgument x:TypeArguments="sd:DataTable">
-                  <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">excelDataTable</mca:CSharpValue>
-                </InArgument>
-              </ui:ForEachRow.DataTable>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:ForEachRow>
-            <ui:FilterDataTable sap2010:Annotation.AnnotationText="This does now work!" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="636,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" SelectColumnsMode="Keep">
-              <ui:FilterDataTable.DataTable>
-                <InArgument x:TypeArguments="sd:DataTable">
-                  <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">excelDataTable</mca:CSharpValue>
-                </InArgument>
-              </ui:FilterDataTable.DataTable>
-              <ui:FilterDataTable.Filters>
-                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                  <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                    <ui:FilterOperationArgument.Column>
-                      <InArgument x:TypeArguments="x:String">
-                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">valueToDownload</mca:CSharpValue>
+                  </ui:ForEachRow>
+                  <ui:FilterDataTable sap2010:Annotation.AnnotationText="This does now work!" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="636,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable.DataTable>
+                      <InArgument x:TypeArguments="sd:DataTable">
+                        <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">excelDataTable</mca:CSharpValue>
                       </InArgument>
-                    </ui:FilterOperationArgument.Column>
-                    <ui:FilterOperationArgument.Operand>
-                      <InArgument x:TypeArguments="x:Object">
-                        <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">valueDelete</mca:CSharpValue>
-                      </InArgument>
-                    </ui:FilterOperationArgument.Operand>
-                  </ui:FilterOperationArgument>
-                </scg:List>
-              </ui:FilterDataTable.Filters>
-              <ui:FilterDataTable.OutputDataTable>
-                <OutArgument x:TypeArguments="sd:DataTable">
-                  <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">excelDataTable</mca:CSharpReference>
-                </OutArgument>
-              </ui:FilterDataTable.OutputDataTable>
-              <ui:FilterDataTable.SelectColumns>
-                <scg:List x:TypeArguments="InArgument" Capacity="4">
-                  <x:Null />
-                </scg:List>
-              </ui:FilterDataTable.SelectColumns>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:FilterDataTable>
-          </Sequence>
-          <Sequence DisplayName="Merge Table &amp; Sort" sap:VirtualizedContainerService.HintSize="678,22" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    </ui:FilterDataTable.DataTable>
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">
+                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">valueToDownload</mca:CSharpValue>
+                            </InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:Object">
+                              <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">valueDelete</mca:CSharpValue>
+                            </InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.OutputDataTable>
+                      <OutArgument x:TypeArguments="sd:DataTable">
+                        <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">excelDataTable</mca:CSharpReference>
+                      </OutArgument>
+                    </ui:FilterDataTable.OutputDataTable>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:FilterDataTable>
+                </Sequence>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <Sequence DisplayName="Merge Table &amp; Sort" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="Sequence_23">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -430,7 +448,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:SortDataTable>
           </Sequence>
-          <Sequence sap2010:Annotation.AnnotationText="Write the ExcelDataTable to the BeastSaber-Manager.xlsx." DisplayName="ExcelDataTable Write" sap:VirtualizedContainerService.HintSize="678,640" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence sap2010:Annotation.AnnotationText="Write the ExcelDataTable to the BeastSaber-Manager.xlsx." DisplayName="ExcelDataTable Write" sap:VirtualizedContainerService.HintSize="476,740" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -438,6 +456,18 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">
+                  <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">out_ExcelDataTable</mca:CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">excelDataTable</mca:CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
             <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,517" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
@@ -482,7 +512,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="724,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="522,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
