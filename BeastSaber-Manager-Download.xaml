@@ -3,7 +3,7 @@
     <x:Property Name="in_ExcelDataTable" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1161,1445</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>905,1701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -35,6 +35,7 @@
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -75,27 +76,28 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="636,1234" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" Version="V1">
+  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="714,1536" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" Version="V1">
     <uix:NApplicationCard.Body>
       <ActivityAction x:TypeArguments="x:Object">
         <ActivityAction.Argument>
           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
         </ActivityAction.Argument>
-        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,1018" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="680,1320" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,924" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="638,1226" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,803" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,1105" sap2010:WorkflowViewState.IdRef="Sequence_26">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="songDownloadURL" />
                     <Variable x:TypeArguments="x:Boolean" Name="toDownload" />
@@ -105,7 +107,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="SongDownloadURL" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,185" sap2010:WorkflowViewState.IdRef="GetRowItem_1">
+                  <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="SongDownloadURL" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="562,185" sap2010:WorkflowViewState.IdRef="GetRowItem_1">
                     <ui:GetRowItem.Row>
                       <InArgument x:TypeArguments="sd:DataRow">
                         <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">CurrentRow</mca:CSharpValue>
@@ -117,7 +119,7 @@
                       </OutArgument>
                     </ui:GetRowItem.Value>
                   </ui:GetRowItem>
-                  <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="ToDownload" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="484,185" sap2010:WorkflowViewState.IdRef="GetRowItem_2">
+                  <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="ToDownload" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="562,185" sap2010:WorkflowViewState.IdRef="GetRowItem_2">
                     <ui:GetRowItem.Row>
                       <InArgument x:TypeArguments="sd:DataRow">
                         <mca:CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">CurrentRow</mca:CSharpValue>
@@ -129,20 +131,41 @@
                       </OutArgument>
                     </ui:GetRowItem.Value>
                   </ui:GetRowItem>
-                  <If sap:VirtualizedContainerService.HintSize="484,259" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If sap:VirtualizedContainerService.HintSize="562,562" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">toDownload == true</mca:CSharpValue>
                       </InArgument>
                     </If.Condition>
                     <If.Then>
-                      <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_1">
-                        <uix:NGoToUrl.Url>
-                          <InArgument x:TypeArguments="x:String">
-                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">songDownloadURL.ToString()</mca:CSharpValue>
-                          </InArgument>
-                        </uix:NGoToUrl.Url>
-                      </uix:NGoToUrl>
+                      <Sequence sap:VirtualizedContainerService.HintSize="526,384" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If sap2010:Annotation.AnnotationText="Check for a blank in the URL." sap:VirtualizedContainerService.HintSize="484,290" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">songDownloadURL.ToString() != ""</mca:CSharpValue>
+                            </InArgument>
+                          </If.Condition>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_1">
+                              <uix:NGoToUrl.Url>
+                                <InArgument x:TypeArguments="x:String">
+                                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">songDownloadURL.ToString()</mca:CSharpValue>
+                                </InArgument>
+                              </uix:NGoToUrl.Url>
+                            </uix:NGoToUrl>
+                          </If.Then>
+                        </If>
+                      </Sequence>
                     </If.Then>
                   </If>
                 </Sequence>
