@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1161,1445" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="905,1848" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -88,7 +88,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="BeastSaber-Manager" sap:VirtualizedContainerService.HintSize="480,1244" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="BeastSaber-Manager" sap:VirtualizedContainerService.HintSize="480,1683" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
         <Variable.Default>
@@ -103,7 +103,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Main Try Catch" sap:VirtualizedContainerService.HintSize="438,1152" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Main Try Catch" sap:VirtualizedContainerService.HintSize="438,1591" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="376,1364" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <Sequence.Variables>
@@ -114,21 +114,21 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="Build URL&#xD;&#xA;//ToDo Consider the elements to build other URLs,&#xD;&#xA;New - Genres, Difficulties, Checkboxes&#xD;&#xA;Top - Time Segments, Genres, Difficulties, Checkboxes&#xD;&#xA;Most Difficult - Time Segments, Genres, Difficulties, Checkboxes" DisplayName="Build URL Parameter" sap:VirtualizedContainerService.HintSize="334,783" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <Sequence sap2010:Annotation.AnnotationText="Build URL&#xA;//ToDo Consider the elements to build other URLs,&#xA;New - Genres, Difficulties, Checkboxes&#xA;Top - Time Segments, Genres, Difficulties, Checkboxes&#xA;Most Difficult - Time Segments, Genres, Difficulties, Checkboxes" DisplayName="Build URL Parameter" sap:VirtualizedContainerService.HintSize="334,783" sap2010:WorkflowViewState.IdRef="Sequence_24">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap2010:Annotation.AnnotationText="The  Uniform Resource Locator to read.  Some examples are below.&#xD;&#xA;Curator Recommended = https://bsaber.com/songs/top/?recommended=true&#xD;&#xA;Verified Mappes = https://bsaber.com/songs/new/?verified=true&#xD;&#xA;Ranked = https://bsaber.com/songs/new/?ranked=true&#xD;&#xA;Newest = https://bsaber.com/songs/new/&#xD;&#xA;Most Liked This Week = https://bsaber.com/songs/top/?time=7-days&#xD;&#xA;Most Liked All Time = https://bsaber.com/songs/top/" DisplayName="Parameter URL" sap:VirtualizedContainerService.HintSize="262,297" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText="The  Uniform Resource Locator to read.  Some examples are below.&#xA;Curator Recommended = https://bsaber.com/songs/top/?recommended=true&#xA;Verified Mappes = https://bsaber.com/songs/new/?verified=true&#xA;Ranked = https://bsaber.com/songs/new/?ranked=true&#xA;Newest = https://bsaber.com/songs/new/&#xA;Most Liked This Week = https://bsaber.com/songs/top/?time=7-days&#xA;Most Liked All Time = https://bsaber.com/songs/top/" DisplayName="Parameter URL" sap:VirtualizedContainerService.HintSize="262,297" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">
                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">webURL</mca:CSharpReference>
                 </OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">https://bsaber.com/songs/top/?recommended=true</InArgument>
+                <InArgument x:TypeArguments="x:String">https://bsaber.com/songs/new/?recommended=true</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -136,14 +136,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign sap2010:Annotation.AnnotationText="The number of songs to read.  Each song on the page (Cover, title, difficulties, etc) counts as one.  Setting the numberOfSongs value to the number 0 will read all songs/pages in the web URL.&#xD;&#xA;&#xD;&#xA;My test of https://bsaber.com/songs/top/?recommended=true on 2021-09-30 resulted in 3,566 records and took 10 minutes." DisplayName="Parameter Number Of Songs" sap:VirtualizedContainerService.HintSize="262,222" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap2010:Annotation.AnnotationText="The number of songs to read.  Each song on the page (Cover, title, difficulties, etc) counts as one.  Setting the numberOfSongs value to the number 0 will read all songs/pages in the web URL.&#xA;&#xA;My test of https://bsaber.com/songs/top/?recommended=true on 2021-09-30 resulted in 3,566 records and took 10 minutes." DisplayName="Parameter Number Of Songs" sap:VirtualizedContainerService.HintSize="262,222" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">
                   <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">numberOfSongs</mca:CSharpReference>
                 </OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">10</InArgument>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
