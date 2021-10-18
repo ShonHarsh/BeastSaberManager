@@ -5,7 +5,7 @@
     <x:Property Name="out_ExcelDataTable" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1161,2560</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>905,2560</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -82,7 +82,6 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="The discovery workflow visits a URL and gathers the song name and download address.&#xA;&#xA;Parameters:&#xA;in_WebURL [String]: The Uniform Resource Locator or web address.&#xA;in_NumberOfSongs [Integer32]: The number of songs to parse.&#xA;&#xA;Excel Document Headers: SongName SongNameURL SongDownloadURL ToDownload&#xA;" DisplayName="BeastSaber-Manager-Discovery" sap:VirtualizedContainerService.HintSize="598,2395" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -173,7 +172,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NApplicationCard>
-            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" DefaultValue="FALSE" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" DefaultValue="TRUE" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
               <ui:AddDataColumn.ColumnName>
                 <InArgument x:TypeArguments="x:String">
                   <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_112">valueToDownload</mca:CSharpValue>
